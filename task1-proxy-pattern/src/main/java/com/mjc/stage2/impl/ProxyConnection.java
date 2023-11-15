@@ -8,7 +8,7 @@ public class ProxyConnection implements Connection {
     private ConnectionPool connectionPool;
     private boolean isClosed;
 
-    public ProxyConnection(RealConnection realConnection, ConnectionPool connectionPool, boolean isClosed) {
+    public ProxyConnection(RealConnection realConnection, ConnectionPool connectionPool) {
         this.realConnection = realConnection;
         this.connectionPool = connectionPool;
         this.isClosed = false;
