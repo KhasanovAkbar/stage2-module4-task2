@@ -11,7 +11,7 @@ public class ProxyConnection implements Connection {
 
     public ProxyConnection(RealConnection realConnection) {
         this.realConnection = realConnection;
-        ConnectionPool.getInstance();
+        this.connectionPool = ConnectionPool.getInstance();
         isClosed = false;
     }
 
