@@ -15,15 +15,16 @@ public class ProxyConnection implements Connection {
 
     public void reallyClose() {
         //
-        connectionPool.getConnection();
-
-
+        realConnection.close();
+        connectionPool.destroyPool();
     }
 
     @Override
     public void close() {
-        realConnection.close();
-        connectionPool.destroyPool();
+        Connection connection = connectionPool.getConnection();
+        connectionPool.releaseConnection(connection);
+        connectionPool.getFreeConnectionsCount();
+
     }
 
     @Override
