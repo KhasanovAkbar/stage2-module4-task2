@@ -25,6 +25,7 @@ public class ConnectionPool {
                 .forEach(freeConnections::offer);
     }
 
+
     public static ConnectionPool getInstance() {
         if (instance == null) {
             instance = new ConnectionPool();
